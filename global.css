@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	--gray-4: #2a2e3b;
+	--gray-3: #474c59;
+	--gray-2: #636976;
+	--gray-1: #828794;
+	--accent-4: #d55268;
+	--accent-3: #dc707c;
+	--accent-2: #e48991;
+	--accent-1: #eaa3a7;
+	--accent-0: #e6ccce;
+	--white-4: #f4f2ef;
+	--white-3: #ebe8e6;
+	--white-2: #e3dedd;
+	--white-1: #d9d3d2;
+}
+
+.solid .ulink a {
+	text-decoration: underline;
+}
+
+.solid {
+	--titlebar-height: 0px;
+}
+
+.solid .grow-wrap {
+	/* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+	display: grid;
+}
+
+.solid .grow-wrap::after {
+	/* Note the weird space! Needed to preventy jumpy behavior */
+	content: attr(data-replicated-value) " ";
+
+	/* This is how textarea text behaves */
+	white-space: pre-wrap;
+
+	/* Hidden from view, clicks, and screen readers */
+	visibility: hidden;
+}
+
+.solid .grow-wrap > textarea {
+	/* You could leave this, but after a user resizes, then it ruins the auto sizing */
+	resize: none;
+
+	/* Firefox shows scrollbar on growth, you can hide like this. */
+	overflow: hidden;
+}
+.solid .grow-wrap > textarea,
+.solid .grow-wrap::after {
+	/* Identical styling required!! */
+	padding: 0.5rem;
+	font: inherit;
+
+	/* Place on top of each other */
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+.solid .split-grid {
+	display: grid;
+	grid-template-rows: 1fr 10px 1fr;
+}
+
+.solid .gutter-row {
+	grid-column: 1/-1;
+	cursor: row-resize;
+}
+
+.solid .gutter-row-1 {
+	grid-row: 1;
+}
+
+.solid gutter {
+	background-color: #eee;
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.solid .gutter.gutter-vertical {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: row-resize;
+}
+
+.nav-folder.mod-root
+	> .nav-folder-children
+	> .nav-folder
+	> .nav-folder-title[data-path^="__solid__"]
+	.nav-folder-title-content {
+	display: inline-block;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+.solid .MuiAvatarGroup-avatar {
+	height: 1.5rem;
+	width: 1.5rem;
+	font-size: small;
+}
+
+.solid button,
+.solid a {
+	cursor: pointer;
+}
+
+.solid .emoji-mart-scroll {
+	border-bottom: 0;
+	margin-bottom: 6px;
+}
+
+.solid .emoji-mart-scroll + .emoji-mart-bar {
+	display: none;
+}
+
+.solid textarea,
+.solid input {
+	padding: 0.25rem 0.5rem;
+}

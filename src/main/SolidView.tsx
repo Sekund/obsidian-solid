@@ -13,6 +13,10 @@ export default class SolidView extends ItemView {
 		this.plugin = plugin;
 	}
 
+	getIcon(): string {
+		return "solid-icon";
+	}
+
 	getViewType() {
 		return SOLID_VIEW_TYPE;
 	}
