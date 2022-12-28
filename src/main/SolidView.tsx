@@ -1,8 +1,8 @@
 import SolidPlugin from "@/main";
 import SolidMainComponent from "@/main/SolidMainComponent";
 import { ItemView, WorkspaceLeaf } from "obsidian";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 export const SOLID_VIEW_TYPE = "solid-view";
 
@@ -28,7 +28,8 @@ export default class SolidView extends ItemView {
 	async onOpen() {
 		const container = this.containerEl.children[1];
 		container.empty();
-		ReactDOM.render(<SolidMainComponent />, this.containerEl.children[1]);
+		const root = ReactDOM.createRoot(container);
+		root.render(<SolidMainComponent />);
 		// this.plugin.updateOnlineStatus();
 	}
 
