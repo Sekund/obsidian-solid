@@ -22,7 +22,7 @@ export default class SolidView extends ItemView {
 	}
 
 	getDisplayText() {
-		return "Solid View";
+		return "My Solid View";
 	}
 
 	async onOpen() {

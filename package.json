@@ -7,7 +7,8 @@
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
 		"build:css": "export environment=development && npx postcss global.css -o styles.css",
-		"version": "node version-bump.mjs && git add manifest.json versions.json"
+		"version": "node version-bump.mjs && git add manifest.json versions.json",
+		"labels": "poeditor pull && rm -rf src/locales && mv tmp/locales src"
 	},
 	"keywords": [],
 	"author": "",
@@ -22,6 +23,7 @@
 		"builtin-modules": "3.3.0",
 		"esbuild": "0.14.47",
 		"esbuild-postcss": "^0.0.4",
+		"i18next-browser-languagedetector": "^7.0.1",
 		"obsidian": "latest",
 		"postcss": "^8.4.20",
 		"postcss-import": "^15.1.0",
@@ -31,8 +33,16 @@
 		"typescript": "4.7.4"
 	},
 	"dependencies": {
+		"@headlessui/react": "^1.7.7",
+		"@heroicons/react": "^2.0.13",
+		"@inrupt/solid-client": "^1.24.0",
+		"@inrupt/solid-client-authn-browser": "^1.12.3",
+		"@inrupt/solid-client-authn-node": "^1.12.3",
+		"@inrupt/vocab-common-rdf": "^1.0.5",
+		"i18next": "^22.4.6",
 		"postcss-cli": "^10.1.0",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-i18next": "^12.1.1"
 	}
 }

@@ -481,12 +481,69 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.sd-p-2 {
-  padding: 0.5rem;
+.sd-mb-8 {
+  margin-bottom: 2rem;
 }
-.sd-text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(96 165 250 / var(--tw-text-opacity));
+.sd-mr-0 {
+  margin-right: 0px;
+}
+.sd-ml-2 {
+  margin-left: 0.5rem;
+}
+.sd-flex {
+  display: flex;
+}
+.sd-h-full {
+  height: 100%;
+}
+.sd-h-4 {
+  height: 1rem;
+}
+.sd-w-full {
+  width: 100%;
+}
+.sd-w-4 {
+  width: 1rem;
+}
+.sd-flex-col {
+  flex-direction: column;
+}
+.sd-items-center {
+  align-items: center;
+}
+.sd-justify-center {
+  justify-content: center;
+}
+.sd-space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.sd-space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+.sd-overflow-hidden {
+  overflow: hidden;
+}
+.sd-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sd-text-center {
+  text-align: center;
+}
+.sd-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.sd-text-secondary {
+  color: var(--color-text-secondary);
+}
+.sd-text-obs-muted {
+  color: var(--text-muted);
 }
 .solid .ulink a {
 	text-decoration: underline;

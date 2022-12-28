@@ -11,6 +11,8 @@
 		"jsx": "react",
 		"importHelpers": true,
 		"isolatedModules": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
 		"strictNullChecks": true,
 		"paths": {
 			"@/*": ["src/*"]

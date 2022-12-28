@@ -1,4 +1,5 @@
 import addSolidIcon from "@/main/icons";
+import SolidService from "@/main/SolidService";
 import SolidView, { SOLID_VIEW_TYPE } from "@/main/SolidView";
 import { Plugin } from "obsidian";
 
@@ -29,6 +30,8 @@ export default class SolidPlugin extends Plugin {
 
 	async onload() {
 		await this.loadSettings();
+
+		SolidService.instantiate(this);
 
 		this.registerView(SOLID_VIEW_TYPE, (leaf) => new SolidView(leaf, this));
 
